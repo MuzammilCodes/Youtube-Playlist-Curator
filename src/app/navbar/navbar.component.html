@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="navbar-container container-fluid">
+        <a class="navbar-brand text" >
+            <img src="../../assets/logo.svg" alt="" class="logo" routerLink="/home">
+            Listly
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active text" aria-current="page" routerLink="/home">Home</a>
+                </li>
+                <li class="nav-item" *ngIf="auth.isAuthenticated$ | async;">
+                    <a class="nav-link text" aria-current="page" routerLink="/dashboard">Dashboard</a>
+                </li>
+                
+            </ul>
+            <div class="d-flex">
+                <ng-container *ngIf="auth.isAuthenticated$ | async; else loginButton">
+                    <button class="btn btn-logout" (click)="auth.logout()">
+                        <i class="icon-logout"></i>
+                        Logout
+                    </button>
+                </ng-container>
+                <ng-template #loginButton>
+                    <button class="btn btn-login" (click)="auth.login()">
+                        <i class="icon-login"></i>
+                        Login
+                    </button>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</nav>
+
+

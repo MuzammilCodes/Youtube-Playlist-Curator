@@ -1,0 +1,91 @@
+<!-- <div class="p-4">
+    <div *ngIf="loading" class="w-full h-1 bg-blue-500"></div>
+
+    <ng-container *ngIf="(auth.isInitialized$ | async) === false">
+        <div class="text-center py-10">
+            <p>Initializing YouTube API...</p>
+            <div class="w-full h-1 bg-blue-500 mt-4"></div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="(auth.isAuthenticated$ | async) === false">
+        <div class="text-center py-10">
+            <p class="mb-4">Please login to access your playlists</p>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded" (click)="auth.login()"
+                [disabled]="(auth.isInitialized$ | async) === false">
+                Login with Google
+            </button>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="auth.isAuthenticated$ | async">
+        <select class="w-full p-2 mb-4 border rounded" (change)="onPlaylistChange($event)">
+            <option value="">Select playlist</option>
+            <option *ngFor="let playlist of playlists" [value]="playlist.id">
+                {{playlist.snippet.title}}
+            </option>
+        </select>
+
+        <div class="space-y-4">
+            <div *ngFor="let video of videos" class="flex items-center p-2 border rounded">
+                <input type="checkbox" [checked]="selectedVideos.has(video.id)"
+                    (change)="toggleVideoSelection(video.id)" class="mr-2">
+                <img [src]="video.snippet.thumbnails.default.url" [alt]="video.snippet.title"
+                    class="w-[90px] h-[90px] object-cover">
+                <p class="ml-2">{{video.snippet.title}}</p>
+            </div>
+        </div>
+
+        <button *ngIf="selectedVideos.size > 0" class="mt-4 bg-red-500 text-white px-4 py-2 rounded"
+            (click)="removeSelectedVideos()" [disabled]="loading">
+            Remove Selected Videos ({{selectedVideos.size}})
+        </button>
+    </ng-container>
+</div> -->
+
+
+
+
+<div class="p-4">
+    <div *ngIf="loading" class="w-full h-1 bg-blue-500"></div>
+
+    <ng-container *ngIf="(auth.isInitialized$ | async) === false">
+        <div class="text-center py-10">
+            <p>Initializing YouTube API...</p>
+            <div class="w-full h-1 bg-blue-500 mt-4"></div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="(auth.isAuthenticated$ | async) === false">
+        <div class="text-center py-10">
+            <p class="mb-4">Please login to access your playlists</p>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded" (click)="auth.login()"
+                [disabled]="(auth.isInitialized$ | async) === false">
+                Login with Google
+            </button>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="auth.isAuthenticated$ | async">
+        <select class="w-full p-2 mb-4 border rounded" (change)="onPlaylistChange($event)">
+            <option value="">Select playlist</option>
+            <option *ngFor="let playlist of playlists" [value]="playlist.id">
+                {{playlist.snippet.title}}
+            </option>
+        </select>
+
+            <div *ngFor="let video of videos" class="video flex items-center ps-1 pt-3 pe-3 pb-3 m-1"  [ngClass]="{'videoselected': selectedVideos.has(video.id)}">
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox"
+                    (change)="toggleVideoSelection(video.id)">
+                  </div>
+                <img [src]="video.snippet.thumbnails.maxres.url" [alt]="video.snippet.title"
+                    class="thumbnail me-2 ms-2">
+                    <span>{{video.snippet.title}}</span>
+            </div>
+
+        <button *ngIf="selectedVideos.size > 0" class="btn btn-logout btn-outline-danger" (click)="removeSelectedVideos()" [disabled]="loading" >
+            Remove ({{selectedVideos.size}})
+        </button>
+    </ng-container>
+</div>
