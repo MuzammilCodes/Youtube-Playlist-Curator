@@ -114,7 +114,7 @@ export class AuthService {
     if (token) {
       this.isAuthenticatedSubject.next(true);
       // Optionally navigate to dashboard if token exists on app initialization
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/Dashboard']);
     }
     this.isInitializedSubject.next(true);
   }
@@ -136,7 +136,7 @@ export class AuthService {
           localStorage.setItem('accessToken', response.access_token);
           this.isAuthenticatedSubject.next(true);
           // Navigate to dashboard after successful login
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/Dashboard']);
         }
       },
       error_callback: (error: any) => {
