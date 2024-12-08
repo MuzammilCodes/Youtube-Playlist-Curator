@@ -1,10 +1,54 @@
-.container-fluid{
+
+///
+.Container-fluid {
     height: 550px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    padding-right: 12em !important; 
+}
+.Container {
+    display: flex; 
+    flex-direction: column; /* Stack text and content vertically */
+    justify-content: center; 
+    align-items: center; 
 }
 
-.video{
+.text-above {
+    margin-bottom: 15px; /* Add space between the text and the firstbox */
+    text-align: center;
+}
+
+.firstbox {
+    display: flex;
+    align-items: center;  
+    gap: 10px;  
+}
+
+.video {
     border-radius: 15px;
     width: 15em;
-    margin: 10px;
-    // height: 100px;
+    height: auto;  
+    margin: 0;  
+    object-fit: contain;  
+}
+
+img {
+    border-radius: 15px;
+    width: 15em;
+    height: auto;  
+    margin: 0;  
+    object-fit: contain;  
+}
+
+.arrow1, .arrow2, .arrow3 {
+    max-height: 15em;
+    object-fit: contain;  
+}
+
+span.display-6 {
+    position: absolute;
+    right: 60%;
+    top: 12%;
+    font-size: 1.5em;
 }
