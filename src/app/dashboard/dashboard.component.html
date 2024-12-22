@@ -1,7 +1,7 @@
 <div class="p-4">
     <ng-container *ngIf="auth.isAuthenticated$ | async">
         <div class="d-flex justify-content-center ">
-            <select class="form-select p-2 mb-4 border rounded" (change)="onPlaylistChange($event)">
+            <select class="form-select p-2 mb-4 border rounded text-center" (change)="onPlaylistChange($event)">
                 <option value="" [disabled]="true" [selected]="true">Select Playlist</option>
                 <option *ngFor="let playlist of playlists" [value]="playlist.id">
                     {{playlist.snippet.title}}
@@ -16,14 +16,15 @@
 
         <div class="mt-5">
             <div *ngFor="let video of videos" class="video flex items-center ps-1 pt-3 pe-3 pb-3 m-1"
-            [ngClass]="{'videoselected': selectedVideos.has(video.id)}">
-            <div class="checkbox-wrapper-13">
-                <input id="c1-13" type="checkbox" (change)="toggleVideoSelection(video.id)">
+                [ngClass]="{'videoselected': selectedVideos.has(video.id)}">
+                <div class="checkbox-wrapper-13">
+                    <input id="c1-13" type="checkbox" (change)="toggleVideoSelection(video.id)">
+                </div>
+                <img [src]="video.snippet.thumbnails.maxres.url" [alt]="video.snippet.title"
+                    class="thumbnail me-2 ms-2">
+                <span>{{video.snippet.title}}</span>
             </div>
-            <img [src]="video.snippet.thumbnails.maxres.url" [alt]="video.snippet.title" class="thumbnail me-2 ms-2">
-            <span>{{video.snippet.title}}</span>
         </div>
-    </div>
 
     </ng-container>
 </div>

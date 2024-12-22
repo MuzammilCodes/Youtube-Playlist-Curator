@@ -56,3 +56,14 @@
         max-width: 300px;
     }
 }
+
+.getStartedBtn{
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 2px solid transparent;
+}
+
+.getStartedBtn:hover{
+    border: 2px dashed rgb(112, 187, 212);   
+}

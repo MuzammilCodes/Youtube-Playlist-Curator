@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <!-- Group 1 -->
     <div class="group">
-        <div class="group-title display-6">Are you storing a lot of videos in your playlist?</div>
+        <div class="group-title display-6">Are you storing a lot of videos in your youtube playlist?</div>
         <div class="image-container">
             <img class="main-image" src="assets/img1.png">
         </div>
@@ -19,14 +19,12 @@
     <div class="group">
         <div class="group-title display-6">Managing playlists just got simpler! <br> Select, click, and you're done!</div>
         <div class="image-container">
-            <img src="assets/final_checkbox.png" class="main-image" alt="">
+            <img src="assets/scs.png" class="main-image" alt="">
         </div>
     </div>
+    <div *ngIf="!(auth.isAuthenticated$ | async)" class="w-100 d-flex">
+        <button class="btn btn-login mx-auto getStartedBtn" (click)="auth.login()">
+            Get Started
+        </button>
+    </div>
 </div>
-<ng-container *ngIf="!(auth.isAuthenticated$ | async)">
-<button class="btn btn-login" (click)="auth.login()">
-    <i class="icon-login"></i>
-    Get Started
-</button>
-</ng-container>
-
