@@ -7,12 +7,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthService } from './Services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './Home/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    DashboardComponent
+    DashboardComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
