@@ -59,7 +59,6 @@ export class AuthService {
         if (response.access_token) {
           localStorage.setItem('accessToken', response.access_token);
           this.isAuthenticatedSubject.next(true);
-          // Navigate to dashboard after successful login
           this.router.navigate(['/Dashboard']);
         }
       },
@@ -75,7 +74,6 @@ export class AuthService {
   logout(): void {
     localStorage.removeItem('accessToken');
     this.isAuthenticatedSubject.next(false);
-    // Navigate back to home page after logout
     this.router.navigate(['/']);
   }
 }
