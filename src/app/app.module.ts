@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthService } from './Services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './Home/home/home.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HomeComponent } from './Home/home/home.component';
     NavbarComponent,
     DashboardComponent,
     HomeComponent,
+    PrivacyPolicyComponent,
   ],
   imports: [
     BrowserModule,
