@@ -1,8 +1,7 @@
 <nav class="navbar navbar-expand-lg">
     <div class="navbar-container container-fluid">
-        <a class="navbar-brand text" >
-            <img src="../../assets/logo.svg" alt="" class="logo" routerLink="/home">
-            Listly
+        <a class="navbar-brand text">
+            Playlist Curator
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,7 +15,7 @@
                 <li class="nav-item" *ngIf="auth.isAuthenticated$ | async;">
                     <a class="nav-link text" aria-current="page" routerLink="/Dashboard">Dashboard</a>
                 </li>
-                
+
             </ul>
             <div class="d-flex">
                 <ng-container *ngIf="auth.isAuthenticated$ | async; else loginButton">
@@ -35,5 +34,3 @@
         </div>
     </div>
 </nav>
-
-

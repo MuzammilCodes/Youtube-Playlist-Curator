@@ -1,13 +1,29 @@
+.navbar-brand{
+  font-family: "Quicksand", serif;
+  font-weight: 600;
+  font-style: normal;
+    font-size: 1.4rem;  
+}
 
-.btn-login:hover{
-    border: 2px dashed lightblue;   
+.nav-item{
+    border: 2px solid transparent;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+.nav-item:hover{
+    border: 2px dashed rgb(112, 187, 212);   
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+
+.btn-login:hover {
+    border: 2px dashed rgb(112, 187, 212);   
 }
 .btn-logout:hover{
-    border: 2px dashed rgb(235, 185, 185);
+    border: 2px dashed rgb(249, 112, 112);
+    color: red;
 }
-.btn-login{
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
-.btn-logout{
+.btn-login, .btn-logout{
+    border: 2px solid transparent;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
