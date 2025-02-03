@@ -15,5 +15,15 @@
   <app-root></app-root>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    // After Angular loads, check for a stored redirect path
+    window.addEventListener('DOMContentLoaded', () => {
+      const redirect = sessionStorage.getItem('redirect');
+      if (redirect) {
+        sessionStorage.removeItem('redirect');
+        window.history.replaceState(null, null, redirect);
+      }
+    });
+  </script>
 <script src="runtime.07793e3ca7007424.js" type="module"></script><script src="polyfills.e1f155bad04e6a6b.js" type="module"></script><script src="main.7ab71274b29fa6ff.js" type="module"></script></body>
 </html>
